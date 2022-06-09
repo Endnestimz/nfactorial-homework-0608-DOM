@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>music</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>
+        <div class="main">
+            <div class="background">
+                <video id="vid1" width="100%" height="500px" src="./mov.mp4">
+                </video>
+            </div>
+            <div class="main-content">
+                <h1>МЧТ</h1>
+                <i class="fa fa-play-circle fa-5x play" ></i>
+                <i class="fa fa-pause-circle fa-5x stop" ></i>
+            
+                <div class="playpause-track">
+                       
+                    <i onclick="mute(this, 'vid1')" class="fa fa-music" style="color:white; " ></i>
+                </div>
+  
+                    
+            </div>
+        </div>
+       
+
+        
+ 
+    </body>
+    <script>
+        const playPauseTrackBtn = document.getElementById("playpause-track")
+        const play = document.querySelector(".play");
+        const stop = document.querySelector(".stop");
+        const video = document.querySelector("video");
+        
+        play.addEventListener("click", () => {
+            console.log("play")
+            video.play();
+            play.style.display = "none";
+            stop.style.display = "block";
+        })
+
+        stop.addEventListener("click", () => {
+            console.log("click")
+            video.pause();
+            play.style.display = "block";
+            stop.style.display = "none";
+        })
+
+        const btn = document.getElementById("playpause-track");
+        function mute(btn,elem){
+  var video = document.getElementById(elem);
+  if (video.muted){
+    video.muted = false;
+    
+  } else{
+    video.muted = true;
+   
+  }
+}
+    </script>
+</html>
